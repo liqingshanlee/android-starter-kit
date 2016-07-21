@@ -46,7 +46,7 @@ android {
 repositories {
   jcenter()
   mavenCentral()
-  maven { url "${System.env.HOME}/.m2/repository" }
+  //  maven { url "${System.env.HOME}/.m2/repository" }
   maven { url "https://jitpack.io" }
 }
 
