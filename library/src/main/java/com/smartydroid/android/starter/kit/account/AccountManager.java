@@ -8,7 +8,6 @@ import android.content.Context;
 import android.text.TextUtils;
 import com.smartydroid.android.starter.kit.app.StarterKitApp;
 import java.util.ArrayList;
-import me.alexrs.prefs.lib.Prefs;
 
 /**
  * @author YuGang Yang <smartydroid@gmail.com>
@@ -95,7 +94,7 @@ public class AccountManager implements AccountProvider {
   private void loadAccountDataFromPrefs() {
     String accountJson = prefs().getString(PREFS_KEY_ACCOUNT_JSON, null);
     if (!TextUtils.isEmpty(accountJson)) {
-      mCurrentAccount = ((StarterKitApp)StarterKitApp.getInstance()).accountFromJson(accountJson);
+      mCurrentAccount = ((StarterKitApp) StarterKitApp.getInstance()).accountFromJson(accountJson);
     }
   }
 
@@ -111,7 +110,7 @@ public class AccountManager implements AccountProvider {
   }
 
   private void clearAccountData() {
-    prefs().remove(PREFS_ACCOUNT_STORAGE);
+    prefs().removeSync(PREFS_ACCOUNT_STORAGE);
   }
 
   private static Prefs prefs() {
